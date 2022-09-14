@@ -10,7 +10,7 @@ const app = new Vue({
             this.filteredDiscs = []
             axios.get('http://localhost/php-ajax-dischi/client_side/apiCall.php?genre=' + this.genreValue)
             .then(filteredResponse => {
-                this.filteredDiscs.push(filteredResponse.data)
+                this.filteredDiscs = filteredResponse.data
                 console.log(filteredResponse.data)
             })
         }
