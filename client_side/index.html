@@ -11,11 +11,26 @@
     <div id="app">
         <header>
             <a href="#" class="logo">
-                <img src="https://grafica-facile.com/wp-content/uploads/2022/01/spotify-logo.png" alt="Spotify Logo">
+                <img 
+                src="https://grafica-facile.com/wp-content/uploads/2022/01/spotify-logo.png" alt="Spotify Logo"
+                >
             </a>
+
+            <select 
+            name="genre" 
+            id="genre" 
+            v-model="genreValue"
+            @change="getFilter"
+            >
+                <option value="">Reset</option>
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="jazz">Jazz</option>
+                <option value="metal">Metal</option>
+            </select>
         </header>
         
-        <main>
+        <main v-if="filteredDiscs.length === 0">
             <div class="cards">
                 <div class="card" v-for="disc in discs">
                     <div class="card-img">
@@ -38,7 +53,31 @@
                 </div>
             </div>
         </main>
-    </div>
+
+        <main v-if="filteredDiscs.length !== 0" style="height: 100vh;">
+            <div class="cards">
+                <div class="card" v-for="disc in filteredDiscs">
+                    <div class="card-img">
+                        <img :src="disc.poster" :alt="disc.title">
+                    </div>
+            
+                    <div class="card-title">
+                        <h3>{{disc.title.toUpperCase()}}</h3>
+                    </div>
+            
+                    <div class="card-text">
+                        <div class="author">
+                            {{disc.author}}
+                        </div>
+            
+                        <div class="release">
+                            {{disc.year}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
