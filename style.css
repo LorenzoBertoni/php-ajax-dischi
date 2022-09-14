@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+    background-color: #2E3A46;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem;
+    background-color: #1E2D3B;
+}
+
+.cards {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;    
+}
+
+.card {
+    width: calc(20% - 2rem);
+    margin-bottom: .9rem;
+    background-color: #2E3A46;
+}
+
+.card-img {
+    width: 70%;
+    height: 130px;
+    margin: 1.5rem auto;
+    cursor: pointer;
+    transition: transform linear .2s;
+}
+
+.card-img:hover {
+    transform: scale(1.1);
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.card-title {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.card-title h3 {
+    word-wrap: break-word;
+}
+
+.card-title h3:hover {
+    text-decoration: underline;
+}
+
+.card-text {
+    margin: 1rem 0 3rem 0;
+}
+
+.author, .release {
+    color: gray;
+    font-weight: 600;
+    margin-top: .2rem;
+    text-align: center;
+}
